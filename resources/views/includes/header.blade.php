@@ -23,10 +23,10 @@
             </div>
 
             <!--Search-box-->
-            <div class="search-box">
-                <i class="fa fa-search"></i>
-
+            <div class="search">
+                @include('includes.searchbar')
             </div>
+
             <!--order-check-->
             <div class="order-box">
                 <i class="fa fa-shopping-cart"></i>

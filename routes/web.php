@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['as' => 'home', function () {
     return view('home');
-});
+}]);
 
-Route::get('/search', function() {
-    return view('search');
-});
+Route::get('/search', ['as' => 'search','uses' => 'SearchController@index']);
+
+Route::get('/search/autocomplete', ['as' => 'autocomplete','uses' => 'SearchController@autocomplete']);
