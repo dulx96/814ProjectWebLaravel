@@ -22,26 +22,32 @@
 
     <!-- Main style -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/search.css">
+
+    <!-- Jquery UI -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui.min.css"></link>
+    <link rel="stylesheet" href="js/jquery-ui.theme.min.css"></link>
+
 </head>
 
 <body>
-
 <!--Header-->
-
 @include('includes.header')
 
 @if(Request::is('/'))
-    <!--introduce title-->
-    @include('includes.introduce')
-    <!--news slide-->
-    @include('includes.slide')
+<!--introduce title-->
+@include('includes.introduce')
+<!--news slide-->
+@include('includes.slide')
 @endif
 
 @yield('content')
 
 </body>
 
-<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/prefixfree.min.js"></script>
 <script src="js/glide.min.js"></script>
 <script src="js/main.js"></script>
