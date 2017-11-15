@@ -1,6 +1,12 @@
 @extends('template.template')
 @section('content')
+
+
 <!--best sell -->
+<!--introduce title-->
+@include('includes.introduce')
+<!--news slide-->
+@include('includes.slide')
 <div class="content best-sell">
     <div class="over-lay">
         <div class="container">

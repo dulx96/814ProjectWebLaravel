@@ -23,7 +23,7 @@
             </div>
 
             <!--Search-box-->
-            <div class="search">
+            <div class="search-box">
                 @include('includes.searchbar')
             </div>
 

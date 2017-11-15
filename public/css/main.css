@@ -76,6 +76,7 @@ p {
     top: 50%;
     transform: translateY(-50%);
     left: 280px;
+
 }
 .header .menu ul li {
     padding: 0 17px;
@@ -94,6 +95,7 @@ p {
     color: #ababab;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1001;
 }
 .header .search-box {
     right: 50px;
@@ -200,4 +202,15 @@ p {
     background-color: #ecf0f1;
     border-radius: 20px;
     margin-top: 20px;
+}
+
+/* thanh xo */
+.ui-autocomplete
+{
+    position:fixed;
+    z-index: 2000;
+    top:0;
+    left:0;
+    cursor:hand;
+
 }

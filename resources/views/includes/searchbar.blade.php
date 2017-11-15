@@ -14,11 +14,5 @@
 </form>
 
 <script type="text/javascript">
-    $('#search_text').autocomplete({
-        source: "/search/autocomplete",
-        minLength:1,
-        select: function(event, ui) {
-            $('#search_text').val(ui.item.value);
-        }
-    });
+
 </script>
