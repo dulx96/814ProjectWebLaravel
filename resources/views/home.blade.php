@@ -13,25 +13,11 @@
             <h2>
                 Best Selling
             </h2>
-            <div class="row">
-
-                <div class="col-lg-3">
-                    <div class="item"></div>
-                    <div class="item"></div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="item"></div>
-                    <div class="item"></div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="item"></div>
-                    <div class="item"></div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="item"></div>
-                    <div class="item"></div>
-                </div>
-            </div>
+                $product = array();
+            @for($i=0;$i<12;$i++)
+                $product = $bestseller[$i];
+                @include('includes.bestsell_thumbnail')
+            @endfor
         </div>
     </div>
 </div>
