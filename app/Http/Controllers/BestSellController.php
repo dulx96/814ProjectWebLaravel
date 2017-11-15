@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\BestSell;
 use App\products;
 use Illuminate\Http\Request;
