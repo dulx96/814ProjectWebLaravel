@@ -13,33 +13,11 @@
             <h2>
                 Best Selling
       1      </h2>
+            <div class="row">
             @foreach($bestseller as $product)
-                <div class='col-lg-3 col-md-4 col-sm-6'>
-                    <div class='item'>
-                        <div class='image_container'>
-                            <img class='product_image'>
-                            <div class='overlay_image' data-ProductID= {!! $product->ProductID !!} ></div>
-                        </div>
-                        <div class='info_container'>
-                            <h3 class='product_name' data-ProductID={{ $product->ProductID }}>
-                                {{ $product->ProductName }}
-                            </h3>
-                            <div class='product_price'>
-                                {{$product->ProductPrice}}
-                            </div>
-                        </div>
-                        <div class='quick_buy_container'>
-                            <button data-ProductID={{$product->ProductID}}
-                                    data-ProductName={{$product->ProductName}}
-                                    data-ProductPrice={{$product->ProductPrice}}
-                                    data-Quantity='1'
-                                    class='quick_buy_button'>
-                                MUA NGAY
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+                    @include('includes.bestsell_thumbnail')
+                @endforeach
+            </div>
         </div>
     </div>
 </div>
@@ -99,4 +77,17 @@
         </div>
     </div>
 </div>
+ {{--modal--}}
+<div class="modal fade" id="item_modal" tabindex="-1" role="dialog" aria-labelledby="item_modal_label">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body" id="item_modal_body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{{--product details--}}
+@include('includes.product_detail')
 @stop

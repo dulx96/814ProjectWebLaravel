@@ -32,6 +32,7 @@
     <!-- Jquery UI -->
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="js/handlebars.js"></script>
 </head>
 
 <body>
