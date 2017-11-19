@@ -177,12 +177,20 @@ p {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: -44px 53px 43px rgba(65,65,65,0.72);
-    animation: changecolor 7s infinite alternate;
+    animation: changecolor 9s infinite alternate ease-out;
     transition: 2s;
 }
 @keyframes changecolor {
     25% {
         background: -webkit-linear-gradient(45deg,#ee0979,#ff6a00);
+        opacity: 0.5;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: -44px 53px 43px rgba(65,65,65,0.42);
+    }
+    40% {
+        background:darkblue;
+        opacity: 0.7;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-shadow: -44px 53px 43px rgba(65,65,65,0.42);
