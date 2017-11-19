@@ -4,7 +4,13 @@
 
 <!--best sell -->
 <!--introduce title-->
-@include('includes.introduce')
+<div class="introduce">
+    <div class="over-lay">
+        <h3>Awesome</h3>
+        <div class="wrap"><h1 class="split"></h1> </div>
+
+    </div>
+</div>
 <!--news slide-->
 @include('includes.slide')
 <div class="content best-sell">
