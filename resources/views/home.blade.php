@@ -7,6 +7,7 @@
 <div class="introduce">
     <div class="over-lay">
         <h3>Awesome</h3>
+        <h2 id="shadow-awesome">Awesome</h2>
         <div class="wrap"><h1 class="split"></h1> </div>
 
     </div>

@@ -1,7 +1,7 @@
 <div class='col-lg-3 col-md-4 col-sm-6'>
     <div class='item'>
       <div class='image_container'>
-        <img class='product_image' src='img/products/<?php echo $image['image'];?>'>
+        <img class='product_image' src='img/logo.png<?php echo $image['image'];?>'>
         <div class='overlay_image' data-ProductID='<?php echo $product['ProductID'];?>'></div>
       </div>
       <div class='info_container'>
