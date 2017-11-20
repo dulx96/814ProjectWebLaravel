@@ -1,25 +1,10 @@
-.search {
-    position: absolute;
-    width: auto;
-    float: left;
-    top: 50%;
-    transform: translateY(-50%);
-    right:40px;
-}
+/* thanh xo */
 
-.search-result {
-    margin-top: 140px;
-}
-
-@media screen and (min-width: 768px) {
-    #adv-search {
-        width: 500px;
-        margin: 0 auto;
-    }
-    .dropdown.dropdown-lg {
-        position: static !important;
-    }
-    .dropdown.dropdown-lg .dropdown-menu {
-        min-width: 500px;
-    }
+.ui-autocomplete
+{
+    position:fixed;
+    z-index: 2000;
+    top:0;
+    left:0;
+    cursor:hand;
 }
