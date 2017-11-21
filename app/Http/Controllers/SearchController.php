@@ -28,8 +28,7 @@ class SearchController extends Controller
             . $term . "%' limit 8");
 
         foreach ($queries as $query) {
-            $results[] = ['id' => $query->ProductID,
-                'value' => $query->ProductName];
+            $results[] = ['Product' => $query,  'value' => $query->ProductName];
         }
         return response()->json($results);
     }

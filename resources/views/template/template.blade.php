@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
     <title>5-con-chym</title>
 
     <!-- Fonts -->
@@ -20,29 +21,31 @@
     <link rel="stylesheet" href="css/glide.core.min.css">
     <link rel="stylesheet" href="css/glide.theme.css">
 
+    {{--j-query-ui--}}
+
+    <link rel="stylesheet" href="js/jquery-ui.min.css"></link>
+    <link rel="stylesheet" href="js/jquery-ui.theme.min.css"></link>
+
     <!-- Main style -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/search.css">
 
-    <!-- Jquery UI -->
+    {{--Js--}}
     <script src="js/jquery.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <link rel="stylesheet" href="js/jquery-ui.min.css"></link>
-    <link rel="stylesheet" href="js/jquery-ui.theme.min.css"></link>
 
+    <!-- Jquery UI -->
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/handlebars.js"></script>
+
+    <!-- Megamenu -->
+    <link rel="stylesheet" href="css/megamenu.css">
+    <script src="js/modernizr-2.8.3.min.js"></script>
+    <script src="js/megamenu.js"></script>
 </head>
 
 <body>
 <!--Header-->
 @include('includes.header')
-
-@if(Request::is('/'))
-<!--introduce title-->
-@include('includes.introduce')
-<!--news slide-->
-@include('includes.slide')
-@endif
-
 @yield('content')
 
 </body>
@@ -50,5 +53,8 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/prefixfree.min.js"></script>
 <script src="js/glide.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
 <script src="js/main.js"></script>
+
+
 </html>
