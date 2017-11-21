@@ -85,9 +85,6 @@
 
             $("#item_modal_body").html(itemModalTemplate(obj));
             $("#item_modal").modal("show");
-
-
-
             $.ajax({
                 dataType: 'json',
                 type:'GET',

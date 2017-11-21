@@ -1,4 +1,6 @@
-
+<i class="fa fa-search"
+   aria-hidden="true" id="btn-search">
+</i>
 <form method="get" action="/search">
     <div class="input-group" id="adv-search">
         <input type="text" id="search_text" name="key" placeholder="Search for products"/>
@@ -9,7 +11,3 @@
         </div>
     </div>
 </form>
-
-<script type="text/javascript">
-
-</script>

@@ -5,14 +5,17 @@ $("#Glide").glide({
     touchDistance: 2
 
 });
-
-
 // search_ajax + animate
 $('#search_text').autocomplete({
     source: "/search/autocomplete",
     minLength:1,
     select: function(event, ui) {
         $('#search_text').val(ui.item.value);
+
+        var data = ui["item"]["Product"];
+        var itemModalTemplate = Handlebars.compile($("#item-modal-template").html());
+        $("#item_modal_body").html(itemModalTemplate(data));
+        $("#item_modal").modal("show");
     }
 });
 
