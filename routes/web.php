@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', ['as' => 'home', function () {
-    return view('home');
-}]);
+Route::get('/', ['as' => 'home', 'uses' => 'BestSellController@getBestSeller']);
 
 Route::get('/search', ['as' => 'search','uses' => 'SearchController@index']);
 

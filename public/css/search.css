@@ -1,5 +1,4 @@
 /* thanh xo */
-
 .ui-autocomplete
 {
     position:fixed;
@@ -7,15 +6,4 @@
     top:0;
     left:0;
     cursor:hand;
-
-}
-
-
-
-@media screen and (min-width: 768px) {
-    #adv-search {
-        width: 500px;
-        margin: 0 auto;
-        z-index: 2000;
-    }
 }

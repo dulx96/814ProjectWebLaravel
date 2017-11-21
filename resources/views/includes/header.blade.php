@@ -3,23 +3,17 @@
         <div >
             <!--logo-->
             <div class="big-logo">
-                <a href="index.html">
+                <a href="/">
                     <img src="img/logo.png">
-                    <span id="name">5 Birds</span>
-                    <span>Shop</span>
-                    <sup>tm</sup>
+                    <div id="logo-text"><h1 id="name">5 Birds</h1>
+                        <span>Shop</span>
+                        <sup>tm</sup></div>
+
                 </a>
             </div>
             <!--menu-->
-            <div class="menu">
-                <ul class="list-inline">
-                    <li><a href="#">Page 1 </a></li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
-                    <li><a href="#">Page 4</a></li>
-                    <li><a href="#">Page 5</a></li>
-                    <li><a href="#">Page 6</a></li>
-                </ul>
+            <div id="menu">
+                @include('includes.megamenu')
             </div>
 
             <!--Search-box-->
