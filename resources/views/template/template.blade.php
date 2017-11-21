@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>5-con-chym</title>
 
     <!-- Fonts -->
@@ -55,6 +56,11 @@
 <script src="js/glide.min.js"></script>
 <script src="js/TweenMax.min.js"></script>
 <script src="js/main.js"></script>
-
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });</script>
 
 </html>

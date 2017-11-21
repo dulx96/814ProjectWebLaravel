@@ -67,18 +67,7 @@
         <h3>Giới thiệu sản phẩm</h3>
         <p>@{{ProductDescription}}</p>
       </div>
-
-      <div class="comment_container">
-        <div id="prev_comment">
-
-        </div>
-        <div>
-          <h3>Đánh giá của bạn</h3>
-          <textarea id="now_comment" name='comment'></textarea>
-          <button class="submit_btn">Submit</button>
-        </div>
-      </div>
-
+      <div id="test"></div>
     </div>
   </div>
 </script>
@@ -90,57 +79,28 @@
             var productId = $(this).attr('data-ProductID');
             var loadedData = <?php echo json_encode($loadedData); ?>;
             var loadedImage = <?php echo json_encode($loadedImage); ?>;
-            console.log(loadedData);
-            $.ajax({
-                type: 'post',
-                url: 'php/comment_controller.php',
-                data:{
-                    showPrevComment: 'yes',
-                    productId: productId
-                },
-                success:function(response) {
-                    $('#prev_comment_header').text("Nhận xét (có )");
-                    $('#prev_comment').html(response);
-                }
-            });
-
             var obj = $.parseJSON(loadedData[productId]);
-            console.log(obj);
 //            if($.parseJSON(loadedImage[productId]) != null)
 //                obj.image = $.parseJSON(loadedImage[productId]).image;
 
             $("#item_modal_body").html(itemModalTemplate(obj));
             $("#item_modal").modal("show");
 
-            $(".input_qty").on('keyup keydown change', function(events) {
-                $('#' + productId).attr("data-Quantity", $(this).val());
+
+
+            $.ajax({
+                dataType: 'json',
+                type:'GET',
+                url: 'comment/get',
+                data: {
+                    productId: productId
+                }
+            }).done(function (response) {
+                $("#test").html(response)
             });
 
-            $(".submit_btn").on("click", function(){
-                $.ajax({
-                    type: 'post',
-                    url: 'php/comment_controller.php',
-                    data:{
-                        addToComments: 'yes',
-                        productId: productId,
-                        comment: $("#now_comment").val()
-                    },
-                    success:function(response) {
-                        $("#now_comment").val("");
-                        $.ajax({
-                            type: 'post',
-                            url: 'php/comment_controller.php',
-                            data:{
-                                showPrevComment: 'yes',
-                                productId: productId
-                            },
-                            success:function(response) {
-                                $('#prev_comment_header').text("Nhận xét (có )");
-                                $('#prev_comment').html(response);
-                            }
-                        });
-                    }
-                });
+            $(".input_qty").on('keyup keydown change', function(events) {
+                $('#' + productId).attr("data-Quantity", $(this).val());
             });
         });
     });
