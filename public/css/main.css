@@ -15,7 +15,11 @@ body {
 p {
     font-size: 14px;
 }
-
+@font-face {
+    font-family: "helvetica";
+    font-style: normal;
+    src: url('/fonts/Helvetica.tff');
+}
 @font-face {
     font-family: "brandon-grotesque";
     font-style: normal;
@@ -344,7 +348,8 @@ p {
     width: 100%;
     height: 100%;
     box-shadow: 0 0 33px rgba(65,65,65,0.62);
-    background: linear-gradient(to bottom, rgba(116,116,191,0.71) 0%, rgba(116,116,191,0.71) 20%, rgba(115,117,191,0.71) 21%, rgba(67,138,199,0.69) 57%, rgba(67,138,199,0) 88%);
+    /*background: linear-gradient(to bottom, rgba(116,116,191,0.71) 0%, rgba(116,116,191,0.71) 20%, rgba(115,117,191,0.71) 21%, rgba(67,138,199,0.69) 57%, rgba(67,138,199,0) 88%);*/
+    background: rgba(44, 62, 80,0.7);
     opacity: 0;
     transform: translateY(-50%);
     transition: all 0.35s;
@@ -369,10 +374,15 @@ p {
 
 
 }
+.content .item .info_container p {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
 .content .item .info_container .product_price{
     position: absolute;
     bottom: 7px;
     color: #e74c3c;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 
@@ -384,6 +394,8 @@ p {
     white-space: nowrap;
     overflow: hidden;
     max-width: 90%;
+    font-size: 20px;
+    font-weight: 600;
 }
 .content .item .info_container p.product_manufacturer {
     position: absolute;
@@ -395,6 +407,8 @@ p {
     max-height: 3.6em;
     line-height: 1.8em;
     max-width: 90%;
+    font-size: 18px;
+    font-weight: 400;
 
 }
 .content .item .info_container p.product_description {
@@ -407,6 +421,8 @@ p {
     max-height: 5.4em;
     line-height: 1.8em;
     max-width: 90%;
+    font-size: 18px;
+    font-weight: 400;
 
 }
 /*.content .item .info_container p.product_name,p.product_manufacturer,p.product_description{*/
