@@ -9,7 +9,7 @@
           <?php echo $product['ProductName'];?>
         </h3>
         <div class='product_price'>
-          <?php echo $product['ProductPrice'];?> $
+          <?php echo $product['ProductPrice'];?>
         </div>
       </div>
       <div class='quick_buy_container'>
@@ -23,3 +23,5 @@
       </div>
     </div>
 </div>
+
+
