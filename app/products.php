@@ -10,7 +10,7 @@ class products extends Model
     //
     public static function get52Products()
     {
-        $query = DB::table("products")->limit(52)->get();
+        $query = $query = DB::table('products')->leftJoin('productimages','products.ProductID','=','productimages.ImageProductId')->get();
         return $query;
     }
 
@@ -22,14 +22,13 @@ class products extends Model
 
     public static function get52ProducsOrderBySmallToBig()
     {
-        $query = DB::table("products")->orderBy('ProductPrice')->limit(52)->get();
+        $query = DB::table('products')->leftJoin('productimages','products.ProductID','=','productimages.ImageProductId')->orderBy('ProductPrice')->limit(52)->get();
         return $query;
     }
 
     public static function get52ProducsOrderByBigToSmall()
     {
-        $query = DB::table("products")->
-        orderBy('ProductPrice', 'desc')->limit(52)->get();
+        $query = DB::table('products')->leftJoin('productimages','products.ProductID','=','productimages.ImageProductId')->orderBy('ProductPrice','desc')->limit(52)->get();
         return $query;
     }
 }

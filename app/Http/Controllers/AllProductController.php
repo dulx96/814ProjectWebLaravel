@@ -26,7 +26,7 @@ class AllProductController extends Controller
         }
         $categories = products::getAllCategory();
         $result = array('products' => $products, 'categories' => $categories);
-        $returnhtml = view("allproduct")->with('result', $result)->render();
+        $returnhtml = view("includes.all_product")->with('result', $result)->render();
         return response()->json($returnhtml);
     }
 }

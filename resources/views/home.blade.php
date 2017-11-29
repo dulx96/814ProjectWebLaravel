@@ -1,7 +1,5 @@
 @extends('template.template')
 @section('content')
-
-
 <!--best sell -->
 <!--introduce title-->
 <div class="introduce">

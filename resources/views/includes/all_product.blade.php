@@ -5,7 +5,7 @@
                 <div class="Filter form-inline form-group col-lg-3 col-md-3">
                     <label>Manufacturer:</label>
                     <select class="form-control" id="manufactuer">
-                        @foreach($products as $product)
+                        @foreach($result["products"] as $product)
                         <option value="{{ $product->ProductManufacturer }}">
                             {{ $product-> ProductManufacturer}}
                         </option>
@@ -13,7 +13,7 @@
                     </select>
                     <label>Category:</label>
                     <select class="form-control" id="category">
-                        @foreach($categories as $categorie)
+                        @foreach($result["categories"] as $categorie)
                         <option value="{{ $categorie->CategoryName}}">{{ $categorie->CategoryName}}</option>
                         @endforeach
                     </select>
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="col-lg-9">
-                    @foreach($products as $product)
+                    @foreach($result["products"] as $product)
                     <div class='item'>
                         <div class='item-over-lay ' data-ProductID={{$product->ProductID}}>
                             <div class='product_image'

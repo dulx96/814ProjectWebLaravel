@@ -1,10 +1,5 @@
-@php
-$products = $result["products"];
-$categories = $result["categories"];
-@endphp
 @extends('template.template')
 @section('content')
-
 <script>
     $(document).ready(function () {
         $('#order').change(function () {
@@ -31,7 +26,5 @@ $categories = $result["categories"];
 <div id="all-products-content">
     @include('includes.all_product')
 </div>
-
-</div>
-@endsection
+@stop
 
