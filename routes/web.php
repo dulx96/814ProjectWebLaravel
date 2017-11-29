@@ -13,8 +13,14 @@
 
 Route::get('/', ['as' => 'home', 'uses' => 'BestSellController@getBestSeller']);
 
-Route::get('/search', ['as' => 'search','uses' => 'SearchController@index']);
+Route::get('/search', ['as' => 'search', 'uses' => 'SearchController@index']);
 
-Route::get('/search/autocomplete', ['as' => 'autocomplete','uses' => 'SearchController@autocomplete']);
-Route::get('comment/get','CommentController@getcommentbyId');
-Route::resource('comment','CommentController');
+Route::get('/search/autocomplete', ['as' => 'autocomplete',
+    'uses' => 'SearchController@autocomplete']);
+Route::get('comment/get', 'CommentController@getcommentbyId');
+Route::get('/allproduct', ['as' => 'allproducts',
+    'uses' => 'AllProductController@index']);
+
+Route::resource('comment', 'CommentController');
+Route::post('/allproduct/order',
+    'AllProductController@orderFromSmallToBig');

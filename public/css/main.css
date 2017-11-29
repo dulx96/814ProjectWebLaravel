@@ -516,3 +516,10 @@ p {
 
 }
 
+#all-products-content {
+    position: absolute;
+    top: 161px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%)
+}
