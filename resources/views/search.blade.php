@@ -30,4 +30,8 @@
         </div>
     </div>
 </div>
+
+<script>
+    console.log(currentcart);
+</script>
 @stop

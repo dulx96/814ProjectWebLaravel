@@ -59,6 +59,15 @@
                     class='quick_buy_button'>
               MUA NGAY
             </button>
+            <button data-ProductID='@{{ProductID}}'
+                    data-ProductName='@{{ProductName}}'
+                    data-ProductPrice='@{{ProductPrice}}'
+                    data-ProductImage='@{{image}}'
+                    data-Quantity='1'
+                    class='add_to_card_details'>
+              them vao gio
+            </button>
+
           </div>
         </div>
       </div>
@@ -74,31 +83,11 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        var itemModalTemplate = Handlebars.compile($("#item-modal-template").html());
-        $('body').on('click', '.overlay_image, .product_name', function(){
+        $('body').on('click', '.item-over-lay', function(){
             var productId = $(this).attr('data-ProductID');
             var loadedData = <?php echo json_encode($loadedData); ?>;
-            var loadedImage = <?php echo json_encode($loadedImage); ?>;
             var obj = $.parseJSON(loadedData[productId]);
-//            if($.parseJSON(loadedImage[productId]) != null)
-//                obj.image = $.parseJSON(loadedImage[productId]).image;
-
-            $("#item_modal_body").html(itemModalTemplate(obj));
-            $("#item_modal").modal("show");
-            $.ajax({
-                dataType: 'json',
-                type:'GET',
-                url: 'comment/get',
-                data: {
-                    productId: productId
-                }
-            }).done(function (response) {
-                $("#test").html(response)
-            });
-
-            $(".input_qty").on('keyup keydown change', function(events) {
-                $('#' + productId).attr("data-Quantity", $(this).val());
-            });
+            show_details(obj);
         });
     });
 </script>

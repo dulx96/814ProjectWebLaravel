@@ -27,9 +27,12 @@
             <!--order-check-->
             <div class="order-box">
                 <i class="fa fa-shopping-cart"></i>
-
             </div>
 
+            <div class="cart">
+            </div>
         </div>
     </div>
 </header>
+<script>
+</script>
