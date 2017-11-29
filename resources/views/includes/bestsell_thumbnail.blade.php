@@ -1,25 +1,30 @@
-<div class='col-lg-3 col-md-4 col-sm-6'>
-    <div class='item'>
-        <div class='image_container'>
-            <img class='product_image'>
-            <div class='overlay_image' data-ProductID={{$product->ProductID}}></div>
-        </div>
+<div class='item'>
+    <div class='item-over-lay ' data-ProductID={{$product->ProductID}}>
+        <div class='product_image' style="background-image: url('img/products/{{$product->image}}')"></div>
+        <div class="over-lay"></div>
         <div class='info_container'>
-            <h3 class='product_name' data-ProductID={{$product->ProductID}}>
-                {{$product->ProductName}}
-            </h3>
-            <div class='product_price'>
-                {{$product->ProductPrice}}
-            </div>
+                <p class='product_name' data-ProductID={{$product->ProductID}}>{{$product->ProductName}}</p>
+                <p class='product_manufacturer'>Hãng: {{$product->ProductManufacturer}}</p>
+                <p class='product_description'>Chi tiết: {{$product->ProductDescription}}</p>
+            <p class='product_price'>{{$product->ProductPrice}}</p>
         </div>
-        <div class='quick_buy_container'>
-            <button data-ProductID={{$product->ProductID}}
-                data-ProductName={{$product->ProductName}}
-                data-ProductPrice={{$product->ProductPrice}}
-                data-Quantity='1'
-                class='quick_buy_button'>
-                MUA NGAY
-            </button>
+
+        <div class="btn-options">
+            <p>{{$product->ProductPrice}}</p>
+
+            <i data-ProductID='{{$product->ProductID}}'
+               data-ProductName='{{$product->ProductName}}'
+               data-ProductPrice='{{$product->ProductPrice}}'
+               data-ProductImage='{{$product->image}}'
+               data-Quantity='1'
+               class='fa fa-cart-plus add_to_card'></i>
+            
+            <i data-ProductID={{$product->ProductID}}
+                    data-ProductName={{$product->ProductName}}
+                    data-ProductPrice={{$product->ProductPrice}}
+                    data-Quantity='1'
+               class='fa fa-opencart quick_buy_button'></i>
         </div>
     </div>
 </div>
+

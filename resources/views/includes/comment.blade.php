@@ -25,28 +25,22 @@
 </div>
 <script>
     $(".submit_btn").on("click", function(){
-        $.ajax({
-            type: 'post',
-            url: 'comment/post',
-            data:{
-                productId: productId,
-                comment: $("#now_comment").val()
-            },
-            success:function(response) {
-                $("#now_comment").val("");
-                $.ajax({
-                    type: 'post',
-                    url: 'php/comment_controller.php',
-                    data:{
-                        showPrevComment: 'yes',
-                        productId: productId
-                    },
-                    success:function(response) {
-                        $('#prev_comment_header').text("Nhận xét (có )");
-                        $('#prev_comment').html(response);
-                    }
-                });
-            }
-        });
+        var productId = '{{$productId}}';
+        if($("now_comment").val() != ""){
+            $.ajax({
+                dataType: 'json',
+                type: 'post',
+                url: 'comment/post',
+                data:{
+                    productId: productId,
+                    comment: $("#now_comment").val()
+                },
+                success:function(response) {
+                    show_comments(productId);
+                    $("now_comment").text("");
+                }
+            });
+        }
+
     });
 </script>
