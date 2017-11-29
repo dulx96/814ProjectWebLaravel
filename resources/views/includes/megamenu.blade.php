@@ -2,7 +2,7 @@
     <div class="menu">
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="http://marioloncarek.com">About</a>
+            <li><a href="/all">About</a>
                 <ul>
                     <li><a href="http://marioloncarek.com">School</a>
                         <ul>

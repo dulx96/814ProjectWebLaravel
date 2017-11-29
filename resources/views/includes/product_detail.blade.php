@@ -59,6 +59,15 @@
                     class='quick_buy_button'>
               MUA NGAY
             </button>
+            <button data-ProductID='@{{ProductID}}'
+                    data-ProductName='@{{ProductName}}'
+                    data-ProductPrice='@{{ProductPrice}}'
+                    data-ProductImage='@{{image}}'
+                    data-Quantity='1'
+                    class='add_to_card_details'>
+              them vao gio
+            </button>
+
           </div>
         </div>
       </div>
@@ -67,81 +76,18 @@
         <h3>Giới thiệu sản phẩm</h3>
         <p>@{{ProductDescription}}</p>
       </div>
-
-      <div class="comment_container">
-        <div id="prev_comment">
-
-        </div>
-        <div>
-          <h3>Đánh giá của bạn</h3>
-          <textarea id="now_comment" name='comment'></textarea>
-          <button class="submit_btn">Submit</button>
-        </div>
-      </div>
-
+      <div id="test"></div>
     </div>
   </div>
 </script>
 
 <script type="text/javascript">
     $(document).ready(function(){
-        var itemModalTemplate = Handlebars.compile($("#item-modal-template").html());
-        $('body').on('click', '.overlay_image, .product_name', function(){
+        $('body').on('click', '.item-over-lay', function(){
             var productId = $(this).attr('data-ProductID');
             var loadedData = <?php echo json_encode($loadedData); ?>;
-            var loadedImage = <?php echo json_encode($loadedImage); ?>;
-
-            $.ajax({
-                type: 'post',
-                url: 'php/comment_controller.php',
-                data:{
-                    showPrevComment: 'yes',
-                    productId: productId
-                },
-                success:function(response) {
-                    $('#prev_comment_header').text("Nhận xét (có )");
-                    $('#prev_comment').html(response);
-                }
-            });
-
             var obj = $.parseJSON(loadedData[productId]);
-            console.log(obj);
-//            if($.parseJSON(loadedImage[productId]) != null)
-//                obj.image = $.parseJSON(loadedImage[productId]).image;
-
-            $("#item_modal_body").html(itemModalTemplate(obj));
-            $("#item_modal").modal("show");
-
-            $(".input_qty").on('keyup keydown change', function(events) {
-                $('#' + productId).attr("data-Quantity", $(this).val());
-            });
-
-            $(".submit_btn").on("click", function(){
-                $.ajax({
-                    type: 'post',
-                    url: 'php/comment_controller.php',
-                    data:{
-                        addToComments: 'yes',
-                        productId: productId,
-                        comment: $("#now_comment").val()
-                    },
-                    success:function(response) {
-                        $("#now_comment").val("");
-                        $.ajax({
-                            type: 'post',
-                            url: 'php/comment_controller.php',
-                            data:{
-                                showPrevComment: 'yes',
-                                productId: productId
-                            },
-                            success:function(response) {
-                                $('#prev_comment_header').text("Nhận xét (có )");
-                                $('#prev_comment').html(response);
-                            }
-                        });
-                    }
-                });
-            });
+            show_details(obj);
         });
     });
 </script>

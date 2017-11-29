@@ -18,15 +18,21 @@
 
             <!--Search-box-->
             <div class="search-box">
+                <i class="fa fa-search"
+                   aria-hidden="true" id="btn-search"></i>
                 @include('includes.searchbar')
+
             </div>
 
             <!--order-check-->
             <div class="order-box">
                 <i class="fa fa-shopping-cart"></i>
-
             </div>
 
+            <div class="cart">
+            </div>
         </div>
     </div>
 </header>
+<script>
+</script>
