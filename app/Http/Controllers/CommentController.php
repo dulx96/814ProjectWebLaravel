@@ -18,5 +18,4 @@ class CommentController extends Controller
         Comment::insertComment($request->input('productId'),$request->input('comment'));
         return response()->json(1);
     }
-    //
 }

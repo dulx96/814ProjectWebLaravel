@@ -16,6 +16,8 @@ Route::get('/', ['as' => 'home', 'uses' => 'BestSellController@getBestSeller']);
 Route::get('/allproduct', ['as' => 'allproducts',
     'uses' => 'AllProductController@index']);
 
+Route::get('all_product/post','AllProductController@orderFromSmallToBig');
+
 Route::post('/allproduct/order',
     'AllProductController@orderFromSmallToBig');
 Route::get('/search', ['as' => 'search','uses' => 'SearchController@index']);

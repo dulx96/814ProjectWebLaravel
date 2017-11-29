@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\BestSell;
 use Illuminate\Http\Request;
 use App\products;
 
