@@ -25,3 +25,5 @@ Route::get('/search/autocomplete', ['as' => 'autocomplete','uses' => 'SearchCont
 Route::get('comment/get','CommentController@getcommentbyId');
 Route::post('comment/post','CommentController@insertcomment');
 Route::get('/all', ['as' => 'all', 'uses' => 'BestSellController@all']);
+
+Route::get('/users/{id}', 'UserController@show');
