@@ -15,7 +15,7 @@ class BestSellController extends Controller
         $bestSellerProducts = product::best_sell();
         $loadedData = array();
         foreach ($bestSellerProducts as $product) {
-            $loadedData[$product->ProductID] = json_encode($product);
+            $loadedData[$product->ProductID] = $product;
         }
         return view('home')->with('bestseller',$bestSellerProducts)->with('loadedData',$loadedData);
     }
@@ -23,7 +23,7 @@ class BestSellController extends Controller
         $bestSellerProducts = product::best_sell();
         $loadedData = array();
         foreach ($bestSellerProducts as $product) {
-            $loadedData[$product->ProductID] = json_encode($product);
+            $loadedData[$product->ProductID] = $product;
         }
         return view('all-products')->with('bestseller',$bestSellerProducts)->with('loadedData',$loadedData);
     }

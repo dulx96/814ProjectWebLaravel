@@ -56,6 +56,7 @@
 <script src="js/glide.min.js"></script>
 <script src="js/TweenMax.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/jquery.cookie.js"></script>
 <script>
     $.ajaxSetup({
         headers: {
