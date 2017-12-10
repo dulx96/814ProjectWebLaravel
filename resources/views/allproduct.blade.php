@@ -9,5 +9,6 @@
 
 {{--product details--}}
 @include('includes.product_detail')
+
 @stop
 

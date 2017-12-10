@@ -7,6 +7,16 @@ use Illuminate\Support\Facades\DB;
 
 class products extends Model
 {
+    public static function loadMore($i)
+    {
+        $query =
+            DB::table('products')->leftJoin('productimages', 'products.ProductID', '=',
+                'productimages.ImageProductId')
+                ->offset($i)
+                ->limit(20)->get();
+        return $query;
+    }
+
     //
     public static function get32Products()
     {
@@ -38,9 +48,9 @@ class products extends Model
                     ->get();
             }
         } else if ($order == 1) {
-            if(strcmp($manufactuer, "0") == 0 && strcmp($category, "0") == 0) {
+            if (strcmp($manufactuer, "0") == 0 && strcmp($category, "0") == 0) {
                 $query = self::get52ProducsOrderBySmallToBig();
-            } else if(strcmp($manufactuer, "0") != 0 && strcmp($category, "0") == 0) {
+            } else if (strcmp($manufactuer, "0") != 0 && strcmp($category, "0") == 0) {
                 $query =
                     DB::table('products')
                         ->where("ProductManufacturer", "=", $manufactuer)
@@ -48,7 +58,7 @@ class products extends Model
                             'productimages.ImageProductId')->orderBy("ProductPrice")
                         ->limit(20)
                         ->get();
-            } else if(strcmp($manufactuer, "0") == 0 && strcmp($category, "0") != 0) {
+            } else if (strcmp($manufactuer, "0") == 0 && strcmp($category, "0") != 0) {
                 $query =
                     DB::table('products')
                         ->leftJoin('productimages', 'products.ProductID', '=',
@@ -58,7 +68,7 @@ class products extends Model
                             $category)
                         ->limit(20)
                         ->get();
-            } else if(strcmp($manufactuer, "0") != 0 && strcmp($category, "0") != 0) {
+            } else if (strcmp($manufactuer, "0") != 0 && strcmp($category, "0") != 0) {
                 $query =
                     DB::table('products')
                         ->where("ProductManufacturer", "=", $manufactuer)
@@ -72,32 +82,35 @@ class products extends Model
             }
 
         } else {
-            if(strcmp($manufactuer, "0") == 0 && strcmp($category, "0") == 0) {
+            if (strcmp($manufactuer, "0") == 0 && strcmp($category, "0") == 0) {
                 $query = self::get52ProducsOrderByBigToSmall();
-            } else if(strcmp($manufactuer, "0") != 0 && strcmp($category, "0") == 0) {
+            } else if (strcmp($manufactuer, "0") != 0 && strcmp($category, "0") == 0) {
                 $query =
                     DB::table('products')
                         ->where("ProductManufacturer", "=", $manufactuer)
                         ->leftJoin('productimages', 'products.ProductID', '=',
-                            'productimages.ImageProductId')->orderBy("ProductPrice","desc")
+                            'productimages.ImageProductId')
+                        ->orderBy("ProductPrice", "desc")
                         ->limit(20)
                         ->get();
-            } else if(strcmp($manufactuer, "0") == 0 && strcmp($category, "0") != 0) {
+            } else if (strcmp($manufactuer, "0") == 0 && strcmp($category, "0") != 0) {
                 $query =
                     DB::table('products')
                         ->leftJoin('productimages', 'products.ProductID', '=',
-                            'productimages.ImageProductId')->orderBy("ProductPrice","desc")
+                            'productimages.ImageProductId')
+                        ->orderBy("ProductPrice", "desc")
                         ->leftJoin('productcategories', 'products.ProductCategoryID', '=',
                             'productcategories.CategoryID')->where("CategoryName", "=",
                             $category)
                         ->limit(20)
                         ->get();
-            } else if(strcmp($manufactuer, "0") != 0 && strcmp($category, "0") != 0) {
+            } else if (strcmp($manufactuer, "0") != 0 && strcmp($category, "0") != 0) {
                 $query =
                     DB::table('products')
                         ->where("ProductManufacturer", "=", $manufactuer)
                         ->leftJoin('productimages', 'products.ProductID', '=',
-                            'productimages.ImageProductId')->orderBy("ProductPrice","desc")
+                            'productimages.ImageProductId')
+                        ->orderBy("ProductPrice", "desc")
                         ->leftJoin('productcategories', 'products.ProductCategoryID', '=',
                             'productcategories.CategoryID')->where("CategoryName", "=",
                             $category)
@@ -164,6 +177,14 @@ class products extends Model
                     'productcategories.CategoryID')->where("CategoryName", "=", $str)
                 ->limit(20)
                 ->get();
+        return $query;
+    }
+
+    public static function find($input)
+    {
+        $query = DB::table('products')
+            ->where('ProductName', 'like','%'.$input.'%')
+            ->get();
         return $query;
     }
 

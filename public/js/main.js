@@ -81,8 +81,6 @@ $('#search_text').autocomplete({
     select: function(event, ui) {
         $('#search_text').val(ui.item.value);
         var data = ui["item"]["Product"];
-        // $("#item_modal_body").html(itemModalTemplate(data));
-        // $("#item_modal").modal("show");
         show_details(data);
     }
 });
@@ -130,6 +128,7 @@ showcart();
 $(".order-box .fa").click(function (event) {
     $(".cart").toggle("slide", {direction: "down" }, 200);
 });
+
 
 // introduce effect
 
