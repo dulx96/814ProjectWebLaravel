@@ -10,23 +10,36 @@ class AllProductController extends Controller
     //
     public function index()
     {
-        $products = products::get52Products();
+        $products = products::get32Products();
         $categories = products::getAllCategory();
-        $result = array('products' => $products, 'categories' => $categories);
-
-        return view('allproduct')->with('result', $result);
+        $manufactuer = products::getAllManufactuer();
+        $result = array('products' => $products, 'categories' => $categories,
+            'manufactuer' => $manufactuer);
+        $loadedData = array();
+        foreach ($result["products"] as $product) {
+            $loadedData[$product->ProductID] = $product;
+        }
+        return view('allproduct')->with('result', $result)
+            ->with("loadedData", $loadedData);
     }
 
-    public function orderFromSmallToBig(Request $request) {
-        $value = $request->input("value");
-        if($value == 1) {
-            $products = products::get52ProducsOrderBySmallToBig();
-        } else {
-            $products = products::get52ProducsOrderByBigToSmall();
-        }
+    public function filter(Request $request)
+    {
+        $order = $request->input("order");
+        $manufactuer = $request->input("manufactuer");
+        $category = $request->input("category");
+
+        $products = products::productsFilter($order, $manufactuer, $category);
         $categories = products::getAllCategory();
-        $result = array('products' => $products, 'categories' => $categories);
-        $returnhtml = view("includes.all_product")->with('result', $result)->render();
+        $manufactuer = products::getAllManufactuer();
+        $result = array('products' => $products, 'categories' => $categories,
+            'manufactuer' => $manufactuer);
+        $loadedData = array();
+        foreach ($result["products"] as $product) {
+            $loadedData[$product->ProductID] = $product;
+        }
+        $returnhtml = view("includes.all_product_include")->with('result', $result)
+            ->render();
         return response()->json($returnhtml);
     }
 }

@@ -7,7 +7,6 @@ $("#Glide").glide({
 });
 // show comments
 function show_comments(productId) {
-    console.log(productId);
     $.ajax({
         dataType: 'json',
         type:'GET',
@@ -20,6 +19,32 @@ function show_comments(productId) {
     });
 
 }
+
+
+$(document).ready(function () {
+    $('#order, #manufactuer, #category').change(function () {
+        var order = document.getElementById('order').value;
+        var manufactuer = document.getElementById('manufactuer').value;
+        var category = document.getElementById('category').value;
+        $.ajax({
+            dataType: 'json',
+            type: 'POST',
+            url: '/allproduct/filter',
+            data: {
+                order: order,
+                manufactuer: manufactuer,
+                category: category
+            },
+            success: function (response) {
+                $("#show").html(response)
+            },
+            error: function (xhr, testStatus, thrownError) {
+                alert("Error");
+            }
+        });
+    });
+});
+
 // show details
 function show_details(obj) {
     var itemModalTemplate = Handlebars.compile($("#item-modal-template").html());
@@ -56,8 +81,6 @@ $('#search_text').autocomplete({
     select: function(event, ui) {
         $('#search_text').val(ui.item.value);
         var data = ui["item"]["Product"];
-        // $("#item_modal_body").html(itemModalTemplate(data));
-        // $("#item_modal").modal("show");
         show_details(data);
     }
 });
@@ -105,6 +128,7 @@ showcart();
 $(".order-box .fa").click(function (event) {
     $(".cart").toggle("slide", {direction: "down" }, 200);
 });
+
 
 // introduce effect
 
