@@ -4,7 +4,7 @@
             <!--logo-->
             <div class="big-logo">
                 <a href="/">
-                    <img src="img/logo.png">
+                    <img src="/img/logo.png">
                     <div id="logo-text"><h1 id="name">5 Birds</h1>
                         <span>Shop</span>
                         <sup>tm</sup></div>

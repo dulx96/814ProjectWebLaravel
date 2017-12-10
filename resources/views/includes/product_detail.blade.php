@@ -5,7 +5,7 @@
       <a href="index.php">
         <h3>
           Sản phẩm uy tín từ
-          <img src="img/logo.png">
+          <img src="/img/logo.png">
           <span id="name">5 Birds</span>
           <span>Shop</span>
           <sup>tm</sup>
@@ -17,7 +17,7 @@
 
       <div class="product_container">
         <div class="image_container">
-          <img src="img/products/@{{image}}">
+          <img src="/img/products/@{{image}}">
         </div>
         <div class="product_info">
           <div>

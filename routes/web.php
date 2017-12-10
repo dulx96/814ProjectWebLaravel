@@ -26,4 +26,7 @@ Route::get('comment/get','CommentController@getcommentbyId');
 Route::post('comment/post','CommentController@insertcomment');
 Route::get('/all', ['as' => 'all', 'uses' => 'BestSellController@all']);
 
+Route::get('/users','UserController@index');
+Route::get('/users/new','UserController@create');
+Route::post('/users','UserController@store');
 Route::get('/users/{id}', 'UserController@show');

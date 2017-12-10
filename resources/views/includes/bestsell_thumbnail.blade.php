@@ -1,6 +1,6 @@
 <div class='item'>
     <div class='item-over-lay ' data-ProductID={{$product->ProductID}}>
-        <div class='product_image' style="background-image: url('img/products/{{$product->image}}')"></div>
+        <div class='product_image' style="background-image: url('/img/products/{{$product->image}}')"></div>
         <div class="over-lay"></div>
         <div class='info_container'>
                 <p class='product_name' data-ProductID={{$product->ProductID}}>{{$product->ProductName}}</p>
