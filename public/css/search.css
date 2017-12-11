@@ -1,0 +1,9 @@
+/* thanh xo */
+.ui-autocomplete
+{
+    position:fixed;
+    z-index: 2000;
+    top:0;
+    left:0;
+    cursor:hand;
+}

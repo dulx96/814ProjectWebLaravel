@@ -10,11 +10,11 @@
 
         <div class="glide__wrapper">
             <ul class="glide__track">
-                <li class="glide__slide"><img src="img/slide_1.jpg"></li>
-                <li class="glide__slide"><img src="img/slide_2.jpg"></li>
-                <li class="glide__slide"><img src="img/slide_3.jpg"></li>
-                <li class="glide__slide"><img src="img/slide_4.jpg"></li>
-                <li class="glide__slide"><img src="img/slide_5.jpg"></li>
+                <li class="glide__slide"><img src="/img/slide_1.jpg"></li>
+                <li class="glide__slide"><img src="/img/slide_2.jpg"></li>
+                <li class="glide__slide"><img src="/img/slide_3.jpg"></li>
+                <li class="glide__slide"><img src="/img/slide_4.jpg"></li>
+                <li class="glide__slide"><img src="/img/slide_5.jpg"></li>
             </ul>
         </div>
 
