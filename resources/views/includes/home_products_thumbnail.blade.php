@@ -18,12 +18,15 @@
                data-ProductImage='{{$product->image}}'
                data-Quantity='1'
                class='fa fa-cart-plus add_to_card'></i>
-            
+
+            <a  href="/cart">
             <i data-ProductID={{$product->ProductID}}
                     data-ProductName={{$product->ProductName}}
                     data-ProductPrice={{$product->ProductPrice}}
+                    data-ProductImage='{{$product->image}}'
                     data-Quantity='1'
                class='fa fa-opencart quick_buy_button'></i>
+            </a>
         </div>
     </div>
 </div>
