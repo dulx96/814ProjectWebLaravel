@@ -180,12 +180,55 @@ class products extends Model
         return $query;
     }
 
-    public static function find($input)
+    public static function findByName($input)
     {
         $query = DB::table('products')
-            ->where('ProductName', 'like','%'.$input.'%')
+            ->where('ProductName', 'like', '%' . $input . '%')
             ->get();
         return $query;
+    }
+
+    public static function findById($id)
+    {
+        $query = DB::table('products')
+            ->where('ProductID', '=', $id)
+            ->get();
+        return $query;
+    }
+
+    public static function appendProduct($ProductID, $ProductSKU, $ProductName,
+                                         $ProductCategoryID, $ProductQuantity,
+                                         $ProductDescription, $ProductManufacturer,
+                                         $ProductWeight, $ProductPrice)
+    {
+        if (strcmp($ProductID, "") == 0) {
+            DB::table('products')->insert([
+                'ProductSKU' => $ProductSKU,
+                'ProductName' => $ProductName,
+                'ProductDescription' => $ProductDescription,
+                'ProductManufacturer' => $ProductManufacturer,
+                'ProductPrice' => $ProductPrice,
+                'ProductWeight' => $ProductWeight,
+                'ProductCategoryID' => $ProductCategoryID,
+                'ProductQuantity' => $ProductQuantity
+            ]);
+        } else {
+            DB::table('products')->where('ProductID', '=', (int)$ProductID)
+                ->update([
+                    "ProductSKU" => $ProductSKU,
+                    'ProductName' => $ProductName,
+                    'ProductDescription' => $ProductDescription,
+                    'ProductManufacturer' => $ProductManufacturer,
+                    'ProductPrice' => $ProductPrice,
+                    'ProductWeight' => $ProductWeight,
+                    'ProductCategoryID' => $ProductCategoryID,
+                    'ProductQuantity' => $ProductQuantity]);
+        }
+    }
+
+    public static function deleteById($id)
+    {
+        DB::table('products')->where('ProductID','=',$id)->delete();
     }
 
 }

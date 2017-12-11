@@ -19,7 +19,7 @@
                 <th>Manufacturer</th>
                 <th>Price</th>
                 <th>Weight</th>
-                <th>CateID</th>
+                <th>CategoryID</th>
                 <th>ProductUpdateDate</th>
                 <th>Quantity</th>
                 <th colspan="2" style="text-align: center">Option</th>
@@ -38,7 +38,7 @@
         $('body').on("click", ".button-delete", function () {
             var val = confirm("Are you sure?");
             var id = $(this).val();
-            var a = "#"+id;
+            var a = "#" + id;
             if (val == true) {
                 $.ajax({
                     data: {

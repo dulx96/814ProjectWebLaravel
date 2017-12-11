@@ -129,7 +129,6 @@ $(".order-box .fa").click(function (event) {
     $(".cart").toggle("slide", {direction: "down" }, 200);
 });
 
-
 // introduce effect
 
 // Quotes about learning from goodreads -- http://www.goodreads.com/quotes/tag/learning

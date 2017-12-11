@@ -1,10 +1,10 @@
 <header class="header">
     <div class="over-lay">
-        <div >
+        <div>
             <!--logo-->
             <div class="big-logo">
                 <a href="/">
-                    <img src="img/logo.png">
+                    <img src="{{ URL::asset('img/logo.png') }}">
                     <div id="logo-text"><h1 id="name">5 Birds</h1>
                         <span>Shop</span>
                         <sup>tm</sup></div>
@@ -21,7 +21,6 @@
                 <i class="fa fa-search"
                    aria-hidden="true" id="btn-search"></i>
                 @include('includes.searchbar')
-
             </div>
 
             <!--order-check-->

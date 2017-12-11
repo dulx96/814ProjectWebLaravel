@@ -1,5 +1,5 @@
 @foreach($products as $product)
-<tr>
+<tr id="{{ $product-> ProductID}}">
     <td>{{ $product-> ProductID}}</td>
     <td>{{ $product-> ProductSKU}}</td>
     <td>{{$product->ProductName}}</td>
@@ -15,13 +15,12 @@
     <td>{{$product->ProductUpdateDate}}</td>
     <td>{{$product->ProductQuantity}}</td>
     <td>
-        <button value="{{ $product->ProductID }}" class="button-delete btn
-        btn-default">Delete
-        </button>
+        <a href="/admin/addel?id={{ $product->ProductID }}" class="btn
+        btn-default">Edit</a>
     </td>
     <td>
-        <button value="{{ $product->ProductID }}" class="button-edit btn
-        btn-default">Edit
+        <button class="btn btn-default button-delete" value="{{ $product->ProductID }}">
+            Delete
         </button>
     </td>
 </tr>
