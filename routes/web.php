@@ -30,3 +30,4 @@ Route::get('/admin/loadmore', ['as' => 'loadmore', 'uses' => "AdminController@lo
 Route::get('/admin/adminFilter',
     ['as' => 'adminFilter', 'uses' => "AdminController@adminFilter"]);
 Route::get('/admin/addel', ["as" => 'ad','uses'=> "AdminController@adminAddel"]);
+Route::get('/admin/delete',["as" => 'de','uses'=> "AdminController@adminDelete"]);

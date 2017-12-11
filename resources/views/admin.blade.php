@@ -2,7 +2,7 @@
 @section('content')
 <div class="admin-table">
     <div>
-        <button class="btn btn-primary" id="add-more">Add More Product</button>
+        <a href="/admin/addel" class="btn btn-primary" id="add-more">Add More Product</a>
     </div>
     <div class="input-group" id="admin-div-search">
         <input type="text" id="admin-search" name="key"
@@ -36,14 +36,23 @@
     $(document).ready(function () {
         var i = 20;
         $('body').on("click", ".button-delete", function () {
-            alert("Delete");
-        });
-        $('body').on("click", ".button-edit", function () {
-            alert("Edit");
-        });
-
-        $('#add-more').click(function () {
-            alert("Add more product");
+            var val = confirm("Are you sure?");
+            var id = $(this).val();
+            var a = "#"+id;
+            if (val == true) {
+                $.ajax({
+                    data: {
+                        id: id
+                    },
+                    url: "/admin/delete",
+                    success: function () {
+                        $(a).hide();
+                    },
+                    error: function (xhr, testStatus, thrownError) {
+                        alert("Error");
+                    }
+                });
+            }
         });
 
         $(window).scroll(function () {
