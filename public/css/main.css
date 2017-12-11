@@ -402,22 +402,12 @@ p {
 .slideshow {
     /*display: none;*/
     position: fixed;
-    top: 54%;
-    z-index: -100;
+    top: 50%;
+    z-index: 100;
     width: 100%;
 }
 
-.glide .glide__track {
-    transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
-}
-
-.glide .glide__slide {
-    text-align: center;
-    cursor: all-scroll;
-}
-
-.glide img {
-    width: 80%;
+.slideshow img {
     height: 506px;
     cursor: hand;
     border-radius: 15px;
@@ -676,6 +666,8 @@ p {
     /*height: 100%;*/
     /*clear: both;*/
 /*}*/
+
+
 .section .catalog {
     height: 40vh;
     text-align: center;
