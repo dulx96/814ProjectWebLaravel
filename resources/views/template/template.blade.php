@@ -26,9 +26,6 @@
 
     <link rel="stylesheet" href="css/jquery-ui.min.css"></link>
     <link rel="stylesheet" href="css/jquery-ui.theme.min.css"></link>
-
-    <!-- Main style -->
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/search.css">
 
     {{--Js--}}
@@ -46,6 +43,13 @@
     {{--animate--}}
     <link rel="stylesheet" href="css/animate.css">
     <script src="js/wow.min.js"></script>
+
+    {{--fullpage--}}
+    <link rel="stylesheet" href="css/jquery.fullpage.min.css">
+    <script src="js/jquery.fullpage.js"></script>
+
+    <!-- Main style -->
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
