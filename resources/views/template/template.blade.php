@@ -41,7 +41,6 @@
     <link rel="stylesheet" href="css/jquery.fullpage.min.css">
     <script src="js/jquery.fullpage.js"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/megamenu.css') }}">
-
     <!-- Main style -->
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}"/>
 </head>
