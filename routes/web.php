@@ -29,5 +29,6 @@ Route::get('/admin', ['as' => "admin", 'uses' => "AdminController@index"]);
 Route::get('/admin/loadmore', ['as' => 'loadmore', 'uses' => "AdminController@loadMore"]);
 Route::get('/admin/adminFilter',
     ['as' => 'adminFilter', 'uses' => "AdminController@adminFilter"]);
-Route::get('/admin/addel', ["as" => 'ad','uses'=> "AdminController@adminAddel"]);
-Route::get('/admin/delete',["as" => 'de','uses'=> "AdminController@adminDelete"]);
+Route::get('/admin/addel', ["as" => 'ad', 'uses' => "AdminController@adminAddel"]);
+Route::get('/admin/delete', ["as" => 'de', 'uses' => "AdminController@adminDelete"]);
+Route::get('/admin/comment', ['as' => 'cm', 'uses' => "AdminController@adminComment"]);

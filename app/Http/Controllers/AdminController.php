@@ -70,8 +70,14 @@ class AdminController extends Controller
         }
     }
 
-    public function adminDelete(Request $request) {
+    public function adminDelete(Request $request)
+    {
         $id = (int)$request->input('id');
         products::deleteById($id);
+    }
+
+    public function adminComment()
+    {
+        return view("admin")->with("products", $query);
     }
 }

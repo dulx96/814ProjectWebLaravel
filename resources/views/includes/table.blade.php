@@ -15,7 +15,7 @@
     <td>{{$product->ProductUpdateDate}}</td>
     <td>{{$product->ProductQuantity}}</td>
     <td>
-        <a href="/admin/addel?id={{ $product->ProductID }}" class=" btn
+        <a href="/admin/addel?id={{ $product->ProductID }}" class="btn
         btn-default">Edit</a>
     </td>
     <td>
