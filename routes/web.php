@@ -29,3 +29,4 @@ Route::get('/admin/adminFilter',
 Route::get('/admin/addel', ["as" => 'ad', 'uses' => "AdminController@adminAddel"]);
 Route::get('/admin/delete', ["as" => 'de', 'uses' => "AdminController@adminDelete"]);
 Route::get('/admin/comment', ['as' => 'cm', 'uses' => "AdminController@adminComment"]);
+Route::get('/cart', 'CartController@index');

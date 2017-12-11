@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}"/>
 
     <!--slide-->
-    <link rel="stylesheet" href="{{ URL::asset('css/glide.core.min.css') }}"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/glide.theme.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::asset('css/owl.carousel.min.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.min.css') }}"/>
 
     {{--j-query-ui--}}
     <link rel="stylesheet" href="{{ URL::asset('js/jquery-ui.min.css') }}"/>
@@ -41,8 +41,6 @@
     <link rel="stylesheet" href="css/jquery.fullpage.min.css">
     <script src="js/jquery.fullpage.js"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/megamenu.css') }}">
-    <script src="{{ URL::asset('js/modernizr-2.8.3.min.js') }}"></script>
-    <script src="{{ URL::asset('js/megamenu.js') }}"></script>
     <!-- Main style -->
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}"/>
 </head>
@@ -57,7 +55,7 @@
 
 <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ URL::asset('js/prefixfree.min.js') }}"></script>
-<script src="{{ URL::asset('js/glide.min.js') }}"></script>
+<script src="{{ URL::asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ URL::asset('js/TweenMax.min.js') }}"></script>
 <script src="{{ URL::asset('js/main.js') }}"></script>
 <script src="{{ URL::asset('js/jquery.cookie.js') }}"></script>

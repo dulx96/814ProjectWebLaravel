@@ -50,14 +50,15 @@
                         </table>
           </div>
           <div class='quick_buy_container'>
-            <button id=@{{ProductID}}
+            <a id=@{{ProductID}}
                     data-ProductID=@{{ProductID}}
                     data-ProductName=@{{ProductName}}
                     data-ProductPrice=@{{ProductPrice}}
+                    data-ProductImage='@{{image}}'
                     data-Quantity='1'
-                    class='quick_buy_button'>
+                    class='quick_buy_button_details' href="/cart">
               MUA NGAY
-            </button>
+            </a>
             <button data-ProductID='@{{ProductID}}'
                     data-ProductName='@{{ProductName}}'
                     data-ProductPrice='@{{ProductPrice}}'

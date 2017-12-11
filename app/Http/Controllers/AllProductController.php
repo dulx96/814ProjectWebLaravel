@@ -17,6 +17,9 @@ class AllProductController extends Controller
             'manufactuer' => $manufactuer);
         $loadedData = array();
         foreach ($result["products"] as $product) {
+            if ($product->image == null) {
+                $product->image = productController::random_image();
+            }
             $loadedData[$product->ProductID] = $product;
         }
         return view('allproduct')->with('result', $result)
