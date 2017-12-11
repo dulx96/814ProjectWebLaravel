@@ -1,6 +1,6 @@
 @extends('template.template')
 @section('content')
-<div class="content search-result">
+<div class="section search-result">
     <div class="over-lay">
         <div class="container">
             <h2>

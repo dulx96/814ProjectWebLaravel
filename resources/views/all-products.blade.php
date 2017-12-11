@@ -1,6 +1,6 @@
 @extends('template.template')
 @section('content')
-<div class="content best-sell">
+<div class="section best-sell">
     <div class="over-lay">
         <div class="container">
             <h2>
@@ -8,7 +8,7 @@
                 1      </h2>
             <div class="row">
                 @foreach($bestseller as $product)
-                    @include('includes.bestsell_thumbnail')
+                    @include('includes.home_products_thumbnail.php')
                 @endforeach
             </div>
         </div>

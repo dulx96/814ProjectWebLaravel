@@ -30,6 +30,7 @@
             </div>
 
             <div class="cart">
+                <p id="nothing">Nothing has been chosen</p>
             </div>
         </div>
     </div>
