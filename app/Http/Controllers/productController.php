@@ -20,25 +20,25 @@ class productController extends Controller
             if ($product->image == null) {
                 $product->image = self::random_image();
             }
-            $loadedData[$product->ProductID] = json_encode($product);
+            $loadedData[$product->ProductID] = $product;
         }
         foreach ($newProducts as $product) {
             if ($product->image == null) {
                 $product->image = self::random_image();
             }
-            $loadedData[$product->ProductID] = json_encode($product);
+            $loadedData[$product->ProductID] = $product;
         }
         foreach ($hotProducts as $product) {
             if ($product->image == null) {
                 $product->image = self::random_image();
             }
-            $loadedData[$product->ProductID] = json_encode($product);
+            $loadedData[$product->ProductID] = $product;
         }
         return view('home')->with('bestseller',$bestSellerProducts)->with('new',$newProducts)->with('hot',$hotProducts)->with('loadedData',$loadedData);
     }
     public static  function random_image() {
 
-        $n = rand(1,20);
+        $n = rand(1,40);
         return  $n .'.jpg' ;
     }
 

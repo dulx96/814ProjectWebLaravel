@@ -14,11 +14,11 @@ class Comment extends Model
     public static function getcommentbyProId($productId){
         return DB::table('comments')->leftJoin('users','comments.CommentUserID','=','users.UserID')->where('CommentProductID',$productId)->get();
     }
-
-    public static function insertComment($productId,$comment){
-            DB::table('comments')->insert([
-                'CommentProductID'=>$productId,
-                'Comment'=>$comment
-            ]);
+    public static function insertComment($productId, $comment)
+    {
+        DB::table('comments')->insert([
+            'CommentProductID' => $productId,
+            'Comment' => $comment
+        ]);
     }
 }
