@@ -29,4 +29,14 @@ Route::get('/admin/adminFilter',
 Route::get('/admin/addel', ["as" => 'ad', 'uses' => "AdminController@adminAddel"]);
 Route::get('/admin/delete', ["as" => 'de', 'uses' => "AdminController@adminDelete"]);
 Route::get('/admin/comment', ['as' => 'cm', 'uses' => "AdminController@adminComment"]);
+
 Route::get('/cart', 'CartController@index');
+
+Route::get('/signup', 'UserController@create');
+Route::post('/users', 'UserController@store');
+Route::get('/users', 'UserController@index');
+Route::get('/users/{id}', 'UserController@show');
+
+Route::get('/login','SessionCotroller@new');
+Route::post('/login','SessionCotroller@create');
+Route::delete('/logout', 'SessionCotroller@destroy');

@@ -3,8 +3,8 @@
 @section('content')
 <div class="container user-container">
 	<div class="row">
-		<div class="col-lg-2 col-md-2 user-menu">
-			<img src="{{ $user->get_gravatar() }}" class="img-responsive user-ava">
+		<div class="col-lg-2 user-menu">
+			<img src="{{ $user->get_gravatar($user->getEmail()) }}" class="img-responsive user-ava">
 			<h4 class="user-name">{{ $user->getName() }}</h4>
 			<br>
 			<ul class="list-unstyled">

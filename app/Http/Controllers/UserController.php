@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -24,10 +26,10 @@ class UserController extends Controller
         $newUser->UserEmail = request('email');
         $newUser->UserFirstName = request('firstName');
         $newUser->UserLastName = request('lastName');
-        $newUser->UserPassword = request('pass');
+        $newUser->UserPassword = Hash::make(request('pass'));
         $newUser->save();
 
-        $user = User::where('UserEmail', request('email'))->get();
+        $user = User::where('UserEmail', request('email'))->first();
         return view('users.show', compact('user'));
     }
 
