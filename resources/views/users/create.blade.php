@@ -2,18 +2,19 @@
 
 @section('content')
 <div class="container user-container">
-	<form action="create_submit" method="get" accept-charset="utf-8">
+	<form action="/users" method="POST" accept-charset="utf-8">
+		{{ csrf_field() }}
 		<div class="form-group ">
 			<h1 class="text-center">Sign up</h1>
 			<br>
-			<input type="text" class="form-control user-form-name" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}">
-			<input type="text" class="form-control user-form-name" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}">
+			<input type="text" name="firstName" class="form-control user-form-name" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}">
+			<input type="text" name="lastName" class="form-control user-form-name" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}">
 		</div>
 		<div class="form-group">
-			<input type="email" class="form-control" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+			<input type="email" name="email" class="form-control" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
 		</div>
 		<div class="form-group">
-			<input type="password" class="form-control" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+			<input type="password" name="pass" class="form-control" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
 		</div>
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary">Create a account</button>

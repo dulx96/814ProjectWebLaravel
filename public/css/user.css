@@ -1,5 +1,6 @@
 .user-container{
 	margin-top: 150px;
+	
 }
 
 .user-menu{
@@ -24,10 +25,4 @@
 	margin-top: 30px;
 	display: block;
 	float: right;
-}
-
-body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #eee;
 }

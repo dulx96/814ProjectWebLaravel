@@ -8,6 +8,8 @@ class User extends Model
 {
 	protected $table='users';
 	protected $primaryKey='UserID';
+    public $timestamps = false;
+
 
 	function getName(){
 		return "$this->UserFirstName"." $this->UserLastName";

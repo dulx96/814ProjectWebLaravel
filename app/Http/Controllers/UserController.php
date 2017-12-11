@@ -18,9 +18,17 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        
+        $newUser = new User;
+        $newUser->UserEmail = request('email');
+        $newUser->UserFirstName = request('firstName');
+        $newUser->UserLastName = request('lastName');
+        $newUser->UserPassword = request('pass');
+        $newUser->save();
+
+        $user = User::where('UserEmail', request('email'))->get();
+        return view('users.show', compact('user'));
     }
 
     public function show($id)
