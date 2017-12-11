@@ -5,6 +5,8 @@
     ProductID}}">
         <input hidden type="number" name="ProductID" value="{{ $product ->
         ProductID}}">
+        <input hidden type="text" name="username" value="thach">
+        <input hidden type="text" name="password" value="123">
         <div class="form-group">
             <label class="control-label col-sm-2" for="productsku">ProductSKU:</label>
             <div class="col-sm-10">

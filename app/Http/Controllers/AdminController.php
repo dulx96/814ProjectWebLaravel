@@ -11,7 +11,12 @@ class AdminController extends Controller
     //
     public function index(Request $request)
     {
-        if (!empty($_GET)) {
+        $username = $request->input("username");
+        $password = $request->input("password");
+        if (!(strcmp($username, 'thach') == 0 && strcmp($password, '123') == 0))
+            return view("authen");
+        if (!empty($_GET["ProductName"])) {
+            echo "abc";
             $ProductID = $request->input("ProductID");
             $ProductSKU = $request->input("ProductSKU");
             $ProductName = $request->input("ProductName");
@@ -76,8 +81,5 @@ class AdminController extends Controller
         products::deleteById($id);
     }
 
-    public function adminComment()
-    {
-        return view("admin")->with("products", $query);
-    }
+
 }

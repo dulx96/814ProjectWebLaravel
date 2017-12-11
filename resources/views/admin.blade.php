@@ -19,7 +19,7 @@
                 <th>Manufacturer</th>
                 <th>Price</th>
                 <th>Weight</th>
-                <th>CategoryID</th>
+                <th>CateID</th>
                 <th>ProductUpdateDate</th>
                 <th>Quantity</th>
                 <th colspan="2" style="text-align: center">Option</th>
