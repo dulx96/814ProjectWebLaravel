@@ -24,8 +24,8 @@
 
     {{--j-query-ui--}}
 
-    <link rel="stylesheet" href="js/jquery-ui.min.css"></link>
-    <link rel="stylesheet" href="js/jquery-ui.theme.min.css"></link>
+    <link rel="stylesheet" href="css/jquery-ui.min.css"></link>
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css"></link>
 
     <!-- Main style -->
     <link rel="stylesheet" href="css/main.css">
@@ -42,6 +42,10 @@
     <link rel="stylesheet" href="css/megamenu.css">
     <script src="js/modernizr-2.8.3.min.js"></script>
     <script src="js/megamenu.js"></script>
+
+    {{--animate--}}
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="js/wow.min.js"></script>
 </head>
 
 <body>

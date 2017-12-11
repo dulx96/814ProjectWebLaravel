@@ -65,7 +65,7 @@
                     data-ProductImage='@{{image}}'
                     data-Quantity='1'
                     class='add_to_card_details'>
-              them vao gio
+              THÊM VÀO GIỎ
             </button>
 
           </div>
@@ -83,7 +83,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('body').on('click', '.item-over-lay', function(){
+        $('body').on('click', '.item-over-lay', function(e){
             var productId = $(this).attr('data-ProductID');
             var loadedData = <?php echo json_encode($loadedData); ?>;
             var obj = $.parseJSON(loadedData[productId]);
