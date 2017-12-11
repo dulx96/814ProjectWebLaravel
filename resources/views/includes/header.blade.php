@@ -1,6 +1,6 @@
 <header class="header">
     <div class="over-lay">
-        <div >
+        <div>
             <!--logo-->
             <div class="big-logo">
                 <a href="/">
@@ -21,7 +21,6 @@
                 <i class="fa fa-search"
                    aria-hidden="true" id="btn-search"></i>
                 @include('includes.searchbar')
-
             </div>
 
             <!--order-check-->
