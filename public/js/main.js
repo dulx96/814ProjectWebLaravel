@@ -7,7 +7,6 @@ $("#Glide").glide({
 });
 // show comments
 function show_comments(productId) {
-    console.log(productId);
     $.ajax({
         dataType: 'json',
         type:'GET',
@@ -20,6 +19,32 @@ function show_comments(productId) {
     });
 
 }
+
+
+$(document).ready(function () {
+    $('#order, #manufactuer, #category').change(function () {
+        var order = document.getElementById('order').value;
+        var manufactuer = document.getElementById('manufactuer').value;
+        var category = document.getElementById('category').value;
+        $.ajax({
+            dataType: 'json',
+            type: 'POST',
+            url: '/allproduct/filter',
+            data: {
+                order: order,
+                manufactuer: manufactuer,
+                category: category
+            },
+            success: function (response) {
+                $("#show").html(response)
+            },
+            error: function (xhr, testStatus, thrownError) {
+                alert("Error");
+            }
+        });
+    });
+});
+
 // show details
 function show_details(obj) {
     var itemModalTemplate = Handlebars.compile($("#item-modal-template").html());
@@ -44,8 +69,6 @@ $('#search_text').autocomplete({
     select: function(event, ui) {
         $('#search_text').val(ui.item.value);
         var data = ui["item"]["Product"];
-        // $("#item_modal_body").html(itemModalTemplate(data));
-        // $("#item_modal").modal("show");
         show_details(data);
     }
 });
@@ -146,7 +169,6 @@ function showcart() {
             '</a></div>');
         $(".card .delete-btn").click(function () {
             var attr = $(this).parent().parent().attr('data-stt');
-            console.log(attr);
             currentcart.splice(attr,1);
             $("[data-stt='" + attr + "']").remove();
             sessionStorage.setItem('cart',JSON.stringify(currentcart));
@@ -161,8 +183,6 @@ showcart();
 $(".order-box .fa").click(function (event) {
     $(".cart").slideToggle();
 });
-
-// introduce effect
 
 // Quotes about learning from goodreads -- http://www.goodreads.com/quotes/tag/learning
 
@@ -209,12 +229,36 @@ $(document).ready(function() {
         });
 });
 
+$(window).scroll(function () {
+    console.log("123");
+});
 
-// Add animation/ Initialize Woo
-$(document).ready(function() {
-
-    'use strict';
-
-    new WOW().init();
-
+$('#fullpage').fullpage({
+    anchor: ['section1','section2','section3','section4'],
+    onLeave: function (index,nextIndex,direction) {
+        if(index==1) {
+            $('#gradient').css('background', 'linear-gradient(135deg, rgba(255,174,39,1) 0%,rgba(222,73,109,1) 100%')
+            $('#gradient').css('z-index','-1')
+        }
+        if(index==2) {
+            if(direction=='up') {
+                $('#gradient').css('z-index','-200')
+                $('#gradient').css('background', '#dfdfdf')
+            }
+            if(direction=='down') {
+                $('#gradient').css('background', 'linear-gradient(135deg, rgba(222,73,109,1) 0%,rgba(171,73,222,1) 100%)')
+            }
+        }
+        if(index==3) {
+            if(direction=='up') {
+                $('#gradient').css('background', 'linear-gradient(135deg, rgba(255,174,39,1) 0%,rgba(222,73,109,1) 100%')
+            }
+            if(direction=='down') {
+                $('#gradient').css('background', 'linear-gradient(135deg, rgba(171,73,222,1) 0%,rgba(73,84,222,1) 100%)')
+            }
+        }
+        if(index==4) {
+                $('#gradient').css('background', 'linear-gradient(135deg, rgba(222,73,109,1) 0%,rgba(171,73,222,1) 100%)')
+        }
+    }
 });

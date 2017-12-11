@@ -38,7 +38,7 @@ class productController extends Controller
     }
     public static  function random_image() {
 
-        $n = rand(1,20);
+        $n = rand(1,40);
         return  $n .'.jpg' ;
     }
 
