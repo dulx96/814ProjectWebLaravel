@@ -27,7 +27,7 @@
 			</a>
 		</div>
 		<div class="google">
-			<a href="#">
+			<a href="/social/redirect/google">
 				<span class="fa fa-google"></span>
 				<span class="connect-with">Connect with Google</span>
 			</a>

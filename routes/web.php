@@ -34,9 +34,12 @@ Route::get('/cart', 'CartController@index');
 
 Route::get('/signup', 'UserController@create');
 Route::post('/users', 'UserController@store');
-Route::get('/users', 'UserController@index');
-Route::get('/users/{id}', 'UserController@show');
+Route::get('/users', 'UserController@show');
 
 Route::get('/login','SessionCotroller@new');
 Route::post('/login','SessionCotroller@create');
-Route::delete('/logout', 'SessionCotroller@destroy');
+Route::get('/logout', 'SessionCotroller@destroy');
+
+Route::get('/social/redirect/google','SocialController@redirectToProvider');
+Route::get('/social/handle/google', 'SocialController@handleProviderCallback');
+Route::post('/addpass','SocialController@save');

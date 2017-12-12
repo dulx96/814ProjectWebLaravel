@@ -17,6 +17,9 @@
 				<li class="user-menu-item">
 					<a href="">Nhận xét của tôi</a>
 				</li>
+				<li class="user-menu-item">
+					<a href="/logout">Đăng xuất</a>
+				</li>
 			</ul>
 		</div>
 
