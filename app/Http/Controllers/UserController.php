@@ -45,7 +45,12 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        //
+        if(Cookie::get('usercookie')==''){
+            flash('You has not logged in')->warning();
+            return redirect('/login');
+        }
+        $user = User::where('UserEmail', Cookie::get('usercookie'))->first();
+        return view('users.edit',compact('user'));
     }
 
     public function update(Request $request, User $user)

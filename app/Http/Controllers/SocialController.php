@@ -8,8 +8,6 @@ use App\User;
 
 class SocialController extends Controller
 {
-	$guser;
-
 	public function redirectToProvider()
 	{
 		return Socialite::driver('google')->redirect();
@@ -19,17 +17,18 @@ class SocialController extends Controller
 	{
 		$guser = Socialite::driver('google')->user();
 		// return response()->json($user);
-		return view('users.addpass', compact('guser'));
+		$guserEmail = $guser->email;
+		return view('users.addpass', compact('guserEmail'));
 	}
 
 	public function save() {
-		global $guser;
-		User::create([
-			'UserEmail' => $guser->email,
-			'UserFirstName' => $guser->name,
-			'UserLastname' => $guser->user->name->familyName,
-			'UserPassword' => Hash::make(request('pass'))
-		]);
+		$newUser = new User;
+        $newUser->UserEmail = $guser->email;
+        $newUser->UserFirstName = $guser->name;
+        $newUser->UserLastName = $guser->user->name->familyName;
+        $newUser->UserPassword = Hash::make(request('pass'));
+        $newUser->save();
+
 		$user = User::where('UserEmail', $guser->email)->first();
 		return view('users.show', compact('user'));
 	}
