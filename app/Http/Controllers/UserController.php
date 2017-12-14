@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Cookie;
 
 class UserController extends Controller
 {
@@ -18,46 +20,44 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        
+        $newUser = new User;
+        $newUser->UserEmail = request('email');
+        $newUser->UserFirstName = request('firstName');
+        $newUser->UserLastName = request('lastName');
+        $newUser->UserPassword = Hash::make(request('pass'));
+        $newUser->save();
+
+        $user = User::where('UserEmail', request('email'))->first();
+        return view('users.show', compact('user'));
     }
 
-    public function show($id)
+    public function show()
     {
-        $user=User::find($id);
+        if(Cookie::get('usercookie')==''){
+            flash('You has not logged in')->warning();
+            return redirect('/login');
+        }
+        $user = User::where('UserEmail', Cookie::get('usercookie'))->first();
         return view('users.show',compact('user'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function edit(User $user)
     {
-        //
+        if(Cookie::get('usercookie')==''){
+            flash('You has not logged in')->warning();
+            return redirect('/login');
+        }
+        $user = User::where('UserEmail', Cookie::get('usercookie'))->first();
+        return view('users.edit',compact('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, User $user)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(User $user)
     {
         //
