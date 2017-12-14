@@ -13,7 +13,7 @@
     {{--gradient-background--}}
     <!--news slide-->
     @include('includes.slide')
-    <div id = "gradient"></div>
+    <div id="gradient"></div>
     <div id="fullpage">
         <div class="section fake"></div>
         <div class="section best-sell">
@@ -57,6 +57,9 @@
                     @endforeach
                 </div>
             </div>
+        </div>
+        <div class="section about">
+            @include('includes.about')
         </div>
     </div>
     {{--modal--}}
