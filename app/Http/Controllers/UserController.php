@@ -20,8 +20,9 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
+
         $newUser = new User;
         $newUser->UserEmail = request('email');
         $newUser->UserFirstName = request('firstName');
@@ -33,7 +34,7 @@ class UserController extends Controller
         return view('users.show', compact('user'));
     }
 
-    public function show()
+    public function show($id)
     {
         if(Cookie::get('usercookie')==''){
             flash('You has not logged in')->warning();

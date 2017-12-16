@@ -34,7 +34,7 @@ Route::get('/cart', 'CartController@index');
 
 Route::get('/signup', 'UserController@create');
 Route::post('/users', 'UserController@store');
-Route::get('/users', 'UserController@show');
+Route::get('/users/{id}', 'UserController@show');
 
 Route::get('/login','SessionCotroller@new');
 Route::post('/login','SessionCotroller@create');
