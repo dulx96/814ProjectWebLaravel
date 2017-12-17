@@ -31,10 +31,12 @@ class UserController extends Controller
         $newUser->save();
 
         $user = User::where('UserEmail', request('email'))->first();
+        Cookie::queue('usercookie', request('email'), 10000000);
+
         return view('users.show', compact('user'));
     }
 
-    public function show($id)
+    public function show()
     {
         if(Cookie::get('usercookie')==''){
             flash('You has not logged in')->warning();
@@ -44,7 +46,7 @@ class UserController extends Controller
         return view('users.show',compact('user'));
     }
 
-    public function edit(User $user)
+    public function edit()
     {
         if(Cookie::get('usercookie')==''){
             flash('You has not logged in')->warning();
@@ -54,7 +56,7 @@ class UserController extends Controller
         return view('users.edit',compact('user'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
         //
     }
