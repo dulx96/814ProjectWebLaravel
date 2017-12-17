@@ -9,12 +9,23 @@
 
 .user-menu{
 	margin: 20px;
-	padding: 12px;
+	padding: 0px;
 	background-color: #EEE;
 }
 
 .user-ava{
 	width: 120px;
+	margin:10px;
+}
+.user-name{
+	font-weight: bold;
+	margin: 10px;
+	font-size: 150%;
+}
+
+.user-menu-item a:hover{
+	color: darkblue;
+	text-decoration: none;
 }
 
 .user-card{
@@ -41,8 +52,8 @@
 }
 
 .fa {
-  margin: 0px 5px;
-  color: white;
+	margin: 0px 5px;
+	color: white;
 }
 
 .facebook, .google {
