@@ -39,10 +39,15 @@ class AllProductController extends Controller
             'manufactuer' => $manufactuer);
         $loadedData = array();
         foreach ($result["products"] as $product) {
+            if ($product->image == null) {
+                $product->image = productController::random_image();
+            }
             $loadedData[$product->ProductID] = $product;
         }
-        $returnhtml = view("includes.all_product_include")->with('result', $result)
-            ->render();
-        return response()->json($returnhtml);
+        $returnhtml = view("includes.all_product_include")->with('result', $result)->render();
+        $obj = new \stdClass();
+        $obj->html = $returnhtml;
+        $obj->loadedData = $loadedData;
+        return response()->json($obj);
     }
 }
