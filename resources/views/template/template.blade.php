@@ -42,9 +42,7 @@
     <script src="js/jquery.fullpage.js"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/megamenu.css') }}">
     <!-- Main style -->
-    <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="css/main.css"/>
-
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/main.css') }}"/>
     <!--user page-->
     <link rel="stylesheet" href="{{ URL::asset('css/user.css') }}"/>
 
