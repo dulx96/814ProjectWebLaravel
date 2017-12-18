@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use Illuminate\Http\Request;
-use PhpParser\Node\Expr\Cast\Object_;
 
 class CommentController extends Controller
 {
@@ -12,7 +11,7 @@ class CommentController extends Controller
         $comments = Comment::getcommentbyProId($request->input('productId'));
         $commentNum = Comment::getcommentbyProId($request->input('productId'))->count();
         $returnhtml = view("includes.comment")->with('comments',$comments)->with('countComment',$commentNum)->with('productId',$request->input('productId'))->render();
-        $Obj = new Object_();
+        $Obj = new \stdClass();
         $Obj->html = $returnhtml;
         $Obj->count = $commentNum;
         return response()->json($Obj);
