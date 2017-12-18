@@ -4,7 +4,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/allproduct">Products</a></li>
             <li><a href="/admin">Admin</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="/login">User</a></li>
 
         </ul>
     </div>
