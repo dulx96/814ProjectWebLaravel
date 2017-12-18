@@ -326,6 +326,9 @@ h1,h2,h3,h4 {
     font-weight: 400;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(45deg, #ee0979, #ff6a00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: changecolor 9s infinite alternate ease-out;
     transition: 2s;
 }
@@ -334,7 +337,7 @@ h1,h2,h3,h4 {
     25% {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background: -webkit-linear-gradient(45deg, #ee0979, #ff6a00);
+        background: none;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         opacity: 0.5;
