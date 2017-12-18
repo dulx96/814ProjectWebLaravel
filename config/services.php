@@ -35,4 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'google' => [
+        'client_id'     => '98194392377-ub342ajvtv51qi65445v6bu7oehcrlkl.apps.googleusercontent.com',
+        'client_secret' => 'ItsS_-SY679KeLVJAeu4xiL1',
+        'redirect'      => 'http://localhost:8000/social/handle/google',
+    ],
 ];
