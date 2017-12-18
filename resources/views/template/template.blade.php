@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/megamenu.css') }}">
     <!-- Main style -->
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}"/>
-    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
 
     <!--user page-->
     <link rel="stylesheet" href="{{ URL::asset('css/user.css') }}"/>
