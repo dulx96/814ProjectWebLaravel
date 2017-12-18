@@ -16,7 +16,7 @@ function show_comments(productId) {
     $.ajax({
         dataType: 'json',
         type: 'GET',
-        url: 'comment/get',
+        url: '/comment/get',
         data: {
             productId: productId
         }
