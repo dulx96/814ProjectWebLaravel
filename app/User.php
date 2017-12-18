@@ -2,28 +2,30 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use Notifiable;
+	protected $table='users';
+	protected $primaryKey='UserID';
+    public $timestamps = false;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+	function getName(){
+		return "$this->UserFirstName"." $this->UserLastName";
+	}
+
+	function getEmail(){
+		return "$this->UserEmail";
+	}
+
+	function getCountry(){
+		return "$this->UserCountry";
+	}
+
+    function get_gravatar( $email) {
+    	$url = 'https://www.gravatar.com/avatar/';
+    	$url .= md5( strtolower( trim( $email ) ) );
+    	return $url;
+    }
 }
