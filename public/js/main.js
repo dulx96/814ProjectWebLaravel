@@ -13,7 +13,6 @@ $(document).ready(function () {
 
 // show comments
 function show_comments(productId) {
-    console.log(productId);
     $.ajax({
         dataType: 'json',
         type: 'GET',

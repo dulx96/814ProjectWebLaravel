@@ -9,6 +9,7 @@ use phpDocumentor\Reflection\Types\Object_;
 class CommentController extends Controller
 {
     public function getcommentbyId(Request $request){
+        dd($request);
         $comments = Comment::getcommentbyProId($request->input('productId'));
         $commentNum = Comment::getcommentbyProId($request->input('productId'))->count();
         $returnhtml = view("includes.comment")->with('comments',$comments)->with('countComment',$commentNum)->with('productId',$request->input('productId'))->render();
