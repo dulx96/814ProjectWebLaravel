@@ -12,13 +12,8 @@ $(document).ready(function () {
 });
 
 // show comments
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-
 function show_comments(productId) {
+    console.log(productId);
     $.ajax({
         dataType: 'json',
         type: 'GET',
@@ -27,7 +22,6 @@ function show_comments(productId) {
             productId: productId
         }
     }).done(function (response) {
-        console.log("duoc");
         $("#test").html(response['html'])
     });
 
