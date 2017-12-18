@@ -15,7 +15,8 @@
                 <td class="space"></td>
                 <td class="price">Price</td>
                 <td class="quantity">Quantity</td>
-                <td class="last"></td>
+                <td></td>
+                <td></td>
               </tr>
             </thead>
             <tbody class="body_table"></tbody>
