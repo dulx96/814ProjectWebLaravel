@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URI', 'https://nam-chym.herokuapp.com'),
+    'url' => env('APP_URL', 'https://nam-chym.herokuapp.com/'),
 
     /*
     |--------------------------------------------------------------------------
