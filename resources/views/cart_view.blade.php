@@ -39,7 +39,7 @@
             </tr>
             <tr>
               <td colspan="2">
-                <button class='quick_buy_button'>
+                <button class='payment'>
                   TIẾN HÀNH THANH TOÁN
                 </button>
               </td>
