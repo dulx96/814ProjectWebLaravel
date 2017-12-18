@@ -7,7 +7,7 @@ use Socialite;
 use App\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
-
+use Cookie;
 
 class SocialController extends Controller
 {
@@ -35,7 +35,7 @@ class SocialController extends Controller
 		$newUser->UserPassword = Hash::make(request('pass'));
 		$newUser->save();
 		$user = User::where('UserEmail', $guser->email)->first();
-		Cookie::queue('usercookie', $guser->UserEmail, 10000000);
+		Cookie::queue('usercookie', $guser->email, 10000000);
 		return view('users.show', compact('user'));
 	}
 }
