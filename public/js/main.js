@@ -12,6 +12,12 @@ $(document).ready(function () {
 });
 
 // show comments
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 function show_comments(productId) {
     $.ajax({
         dataType: 'json',
