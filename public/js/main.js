@@ -21,6 +21,7 @@ function show_comments(productId) {
             productId: productId
         }
     }).done(function (response) {
+        console.log("duoc");
         $("#test").html(response['html'])
     });
 
