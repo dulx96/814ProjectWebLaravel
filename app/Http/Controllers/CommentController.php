@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Object_;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class CommentController extends Controller
 {

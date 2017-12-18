@@ -3442,4 +3442,10 @@ return array(
     'phpDocumentor\\Reflection\\DocBlock\\Tag\\VarTag' => $vendorDir . '/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/VarTag.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tag\\VersionTag' => $vendorDir . '/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/VersionTag.php',
     'phpDocumentor\\Reflection\\DocBlock\\Type\\Collection' => $vendorDir . '/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Type/Collection.php',
+    'phpDocumentor\\Reflection\\Element' => $vendorDir . '/phpdocumentor/reflection-common/src/Element.php',
+    'phpDocumentor\\Reflection\\File' => $vendorDir . '/phpdocumentor/reflection-common/src/File.php',
+    'phpDocumentor\\Reflection\\Fqsen' => $vendorDir . '/phpdocumentor/reflection-common/src/Fqsen.php',
+    'phpDocumentor\\Reflection\\Location' => $vendorDir . '/phpdocumentor/reflection-common/src/Location.php',
+    'phpDocumentor\\Reflection\\Project' => $vendorDir . '/phpdocumentor/reflection-common/src/Project.php',
+    'phpDocumentor\\Reflection\\ProjectFactory' => $vendorDir . '/phpdocumentor/reflection-common/src/ProjectFactory.php',
 );
