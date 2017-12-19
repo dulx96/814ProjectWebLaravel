@@ -348,3 +348,7 @@ $('#fullpage').fullpage({
         }
     }
 });
+
+$("#prospects_form").submit(function (e) {
+    e.preventDefault();
+});
