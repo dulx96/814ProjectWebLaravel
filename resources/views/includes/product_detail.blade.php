@@ -80,12 +80,3 @@
     </div>
 </script>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('body').on('click', '.item-over-lay', function(e){
-            var productId = $(this).attr('data-ProductID');
-            var loadedData = <?php echo json_encode($loadedData); ?>;
-            show_details(loadedData[productId]);
-        });
-    });
-</script>

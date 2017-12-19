@@ -32,7 +32,7 @@
             $.ajax({
                 dataType: 'json',
                 type: 'post',
-                url: 'comment/post',
+                url: '/comment/post',
                 data:{
                     productId: productId,
                     comment: $("#now_comment").val()

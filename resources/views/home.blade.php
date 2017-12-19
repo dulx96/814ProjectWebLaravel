@@ -76,4 +76,7 @@
 
     {{--product details--}}
     @include('includes.product_detail')
+    <script>
+        var loadedData = <?php echo json_encode($loadedData)?>;
+    </script>
 @stop
