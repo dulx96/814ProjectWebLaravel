@@ -228,7 +228,26 @@ class products extends Model
 
     public static function deleteById($id)
     {
-        DB::table('products')->where('ProductID','=',$id)->delete();
+        DB::table('products')->where('ProductID', '=', $id)->delete();
+    }
+
+    public static function getAllOrders()
+    {
+        return DB::table('orders')
+            ->leftJoin('users', 'users.UserID', '=',
+                'orders.OrderUserID')
+            ->orderBy('OrderDate')->get();
+    }
+
+    public static function getProductsByOrderId($id)
+    {
+        $query =
+            DB::table('orderdetails')
+                ->where('DetailOrderID', '=', $id)
+                ->leftJoin('products', 'products.ProductID', '=',
+                    'orderdetails.DetailProductID')
+                ->get();
+        return $query;
     }
 
 }
