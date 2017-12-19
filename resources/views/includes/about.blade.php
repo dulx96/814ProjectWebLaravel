@@ -21,9 +21,9 @@
         <figure class="col">
             <img src="/img/ava/duc.png">
             <p class="name">Le Duc</p>
-            <p class="mssv">Parrot </p>
+            <p class="mssv">Falco </p>
             <p class="descript"><i class="fa fa-quote-left" aria-hidden="true"></i>
-                I am 'M' <i class="fa fa-quote-right" aria-hidden="true"></i>
+                I am 'M', is that true? <i class="fa fa-quote-right" aria-hidden="true"></i>
             </p>
         </figure>
         <figure class="col">
