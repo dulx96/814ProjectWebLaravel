@@ -16,7 +16,6 @@ Route::get('/allproduct', ['as' => 'allproducts',
     'uses' => 'AllProductController@index']);
 Route::post('/allproduct/filter',
     'AllProductController@filter');
-Route::get('/search', ['as' => 'search', 'uses' => 'SearchController@index']);
 Route::get('/search/autocomplete',
     ['as' => 'autocomplete', 'uses' => 'SearchController@autocomplete']);
 Route::get('/comment/get', 'CommentController@getcommentbyId');

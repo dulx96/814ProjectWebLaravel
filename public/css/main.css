@@ -1140,7 +1140,7 @@ li:hover {
 .cart_content .cart_main .cart_order .summary_total .price_total, .price_text {
     padding: 20px 0px 20px;
 }
-.cart_content .cart_main .cart_order .summary_total .quick_buy_button {
+.cart_content .cart_main .cart_order .summary_total .payment {
     width: 100%;
     border: 1px solid #f37022;
     background-color: #f37022;
@@ -1149,7 +1149,9 @@ li:hover {
     font-weight: bold;
     color: rgb(255, 255, 255);
 }
-.cart_content .cart_main .cart_order .summary_total .quick_buy_button:hover {
+.cart_content .cart_main .cart_order .summary_total .payment:hover {
     background-color: rgb(255, 255, 255);
     color: #f37022;
 }
+
+.ui-helper-hidden-accessible { display:none; }
