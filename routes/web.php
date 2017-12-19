@@ -21,6 +21,8 @@ Route::get('/search/autocomplete',
 Route::get('/comment/get', 'CommentController@getcommentbyId');
 Route::post('/comment/post', 'CommentController@insertcomment');
 Route::get('/all', ['as' => 'all', 'uses' => 'BestSellController@all']);
+
+// Admin
 Route::get('/admin', ['as' => "admin", 'uses' => "AdminController@index"]);
 Route::get('/admin/loadmore', ['as' => 'loadmore', 'uses' => "AdminController@loadMore"]);
 Route::get('/admin/adminFilter',
@@ -28,6 +30,8 @@ Route::get('/admin/adminFilter',
 Route::get('/admin/addel', ["as" => 'ad', 'uses' => "AdminController@adminAddel"]);
 Route::get('/admin/delete', ["as" => 'de', 'uses' => "AdminController@adminDelete"]);
 Route::get('/admin/comment', ['as' => 'cm', 'uses' => "AdminController@adminComment"]);
+Route::get('/admin/orders',['as' => "admin", 'uses' => "AdminController@ordersIndex"]);
+Route::get('/admin/orders/detail',['as' => 'detail', 'uses' => "AdminController@orderDetail"]);
 
 Route::get('/cart', 'CartController@index');
 

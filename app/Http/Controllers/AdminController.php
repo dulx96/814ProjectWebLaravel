@@ -80,5 +80,20 @@ class AdminController extends Controller
         products::deleteById($id);
     }
 
+    public function ordersIndex()
+    {
+        $orders = products::getAllOrders();
+        return view('orders')->with("orders", $orders);
+    }
 
+    public function orderDetail(Request $request)
+    {
+        $sum = 0;
+        $id = $request->input('id');
+        $products = products::getProductsByOrderId($id);
+        foreach ($products as $product) {
+            $sum = $sum + $product->DetailQuantity * $product->ProductPrice;
+        }
+        return view('order_detail')->with('products',$products)->with('sum',$sum);
+    }
 }

@@ -1,4 +1,4 @@
-@extends("template.template")
+@extends("template.AdminTemplate")
 @section('content')
 <div class="addel-form">
     <form class="form-horizontal" action="/admin?ProductID={{ $product ->
