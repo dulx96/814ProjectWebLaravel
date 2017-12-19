@@ -221,6 +221,13 @@ h1,h2,h3,h4 {
 .header .order-box i {
     color: #ababab;
 }
+.header .order-box .shake {
+    transform: scale(1.5);
+    color: white;
+    transition-delay: 0.1s;
+    transition: all 0.5s;
+
+}
 
 .header .cart {
     position: absolute;
@@ -678,19 +685,6 @@ h1,h2,h3,h4 {
     clear: both;
     overflow: hidden;
 }
-/*}*/
-/*.section.new .over-lay {*/
-    /*height: 100%;*/
-    /*clear: both;*/
-/*}*/
-
-/*.section.hot .over-lay {*/
-
-    /*height: 100%;*/
-    /*clear: both;*/
-/*}*/
-
-
 .section .catalog {
     height: 40vh;
     text-align: center;
