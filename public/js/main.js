@@ -137,7 +137,11 @@ function addToCart(clicked) {
     };
     checkExist(currentcart, item);
     sessionStorage.setItem('cart', JSON.stringify(currentcart));
-    console.log(currentcart);
+    $('.fa-shopping-cart').addClass('shake');
+    setTimeout(function () {
+        $('.fa-shopping-cart').removeClass('shake');
+    },800);
+
     showcart();
 }
 
