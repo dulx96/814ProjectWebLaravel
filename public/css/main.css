@@ -1153,3 +1153,5 @@ li:hover {
     background-color: rgb(255, 255, 255);
     color: #f37022;
 }
+
+.ui-helper-hidden-accessible { display:none; }
