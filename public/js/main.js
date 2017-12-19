@@ -210,11 +210,11 @@ function showcart() {
             var attr = $(this).parent().parent().attr('data-stt');
             currentcart.splice(attr,1);
             sessionStorage.setItem('cart',JSON.stringify(currentcart));
-            if (currentcart.length < 1) {
-                showcart();
-                cart.html("");
-                cart.append("<p id='nothing'>Nothing has been chosen<p/>");
-            }
+            showcart();
+            // if (currentcart.length < 1) {
+            //     cart.html("");
+            //     cart.append("<p id='nothing'>Nothing has been chosen<p/>");
+            // }
         });
 
         $(".card .edit-btn").click(function () {
