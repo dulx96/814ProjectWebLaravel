@@ -135,14 +135,20 @@ function addToCart(clicked) {
         "image": $(clicked).attr('data-ProductImage'),
         "quantity": parseInt($(clicked).attr('data-Quantity')),
     };
-    checkExist(currentcart, item);
-    sessionStorage.setItem('cart', JSON.stringify(currentcart));
-    $('.fa-shopping-cart').addClass('shake');
-    setTimeout(function () {
-        $('.fa-shopping-cart').removeClass('shake');
-    },800);
+    if(parseInt($(clicked).attr('data-Quantity')) <= 0) {
+        alert("so luong phai lon hon 0 !");
+    }
+    else {
+        checkExist(currentcart, item);
+        sessionStorage.setItem('cart', JSON.stringify(currentcart));
+        $('.fa-shopping-cart').addClass('shake');
+        setTimeout(function () {
+            $('.fa-shopping-cart').removeClass('shake');
+        },800);
 
-    showcart();
+        showcart();
+    }
+
 }
 
 function checkExist(Array, item) {
